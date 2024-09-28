@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import robotsImage from './LogoRobots.png';
-import RobotDetail from './robotdetail';
+import robotsImage from '../../statics/LogoRobots.png';
+import RobotDetail from '../robotdetail/robotdetail';
+import { FormattedMessage } from "react-intl";
+import "./listarrobots.css"
 
 function RobotsList() {
     const [robots, setRobots] = useState([]);
@@ -28,23 +30,34 @@ function RobotsList() {
 
     return (
         <div className="container mt-5">
-            <h1 className="text-center mb-4">Adopta un Robot con Robot Lovers!</h1>
+            <h1 className="text-center mb-4">
+                <FormattedMessage id="page.title" defaultMessage="Adopt a Robot with Robot Lovers!" />
+            </h1>
+            <hr className="half-rule" />
             <div className="text-center mb-4">
-                <img src={robotsImage} alt="Robots" className="img-fluid" />
+                <img src={robotsImage} alt="Robots" className="img-fluid custom-img-size" />
             </div>
+            <hr className="half-rule" />
 
             {error && <div className="alert alert-danger">Error al cargar el listado de robots</div>}
 
             <div className="row">
-                {/* Lista de Robots */}
                 <div className="col-md-6">
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Modelo</th>
-                                <th>Empresa Fabricante</th>
+                                <th>
+                                    <FormattedMessage id="ID" defaultMessage="ID" />
+                                </th>
+                                <th>
+                                    <FormattedMessage id="Nombre" defaultMessage="Nombre" />
+                                </th>
+                                <th>
+                                    <FormattedMessage id="Modelo" defaultMessage="Modelo" />
+                                </th>
+                                <th>
+                                    <FormattedMessage id="company.th" defaultMessage="Empresa Fabricante" />
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,14 +73,11 @@ function RobotsList() {
                     </table>
                 </div>
 
-                
-                <div className="col-md-6">
-                    {selectedRobot ? (
+                {selectedRobot && (
+                    <div className="col-md-5">
                         <RobotDetail robot_id={selectedRobot} />
-                    ) : (
-                        <p>Seleccione un robot para ver detalles</p>
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
 
             <div className="text-center mt-4">

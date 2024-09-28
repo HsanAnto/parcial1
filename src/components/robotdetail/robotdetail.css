@@ -1,0 +1,33 @@
+.robot-card {
+    background-color: #f2f2f2; /* Fondo gris claro */
+    border: 1px solid #a9a9a9; /* Borde gris oscuro */
+    width: 100%; /* Asegura que la tarjeta use el 100% del contenedor */
+    height: 100%; /* Se ajusta para que llene todo el espacio verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido esté equilibrado */
+    padding: 20px;
+}
+
+.robot-image {
+    width: 80%; /* Controla el ancho de la imagen */
+    height: auto;
+    margin: 0 auto; /* Asegura que la imagen esté centrada */
+}
+
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333; /* Texto oscuro */
+}
+
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333; /* Texto oscuro */
+}
+
+.card-body {
+    padding: 15px;
+}

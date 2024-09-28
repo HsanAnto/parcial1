@@ -1,0 +1,27 @@
+
+.form-control.bg-light {
+    background-color: #f2f2f2;
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.btn-alargado {
+    width: 230px;
+}
+
+.custom-img-size {
+    width: 90%; 
+    height: auto;
+}
+
+.half-rule {
+    width: 90%;
+    margin: 20px auto;
+    border-top: 3px solid #ccc;
+}
+
+.input-error {
+    border: 2px solid red; /* Borde rojo en caso de error */
+}
